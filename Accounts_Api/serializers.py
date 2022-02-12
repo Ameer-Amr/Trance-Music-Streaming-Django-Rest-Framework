@@ -42,6 +42,7 @@ class UserRegisterSerializer(serializers.ModelSerializer):
                     "errors":"Password should contain Uppercase, Lowercase, Numeric and Special Characters."
                 })
         register.set_password(password)
+        register.is_active = False
         register.save()
         return register
         
